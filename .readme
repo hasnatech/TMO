@@ -1,0 +1,49 @@
+ref: https://www.valentinog.com/blog/babel/
+
+npm init -y
+
+npm i webpack webpack-cli webpack-dev-server @babel/core babel-loader @babel/preset-env @babel/preset-react html-webpack-plugin html-loader css-loader sass-loader node-sass style-loader --save-dev
+
+npm i react react-dom
+
+
+package.json
+"scripts": {
+  "start": "webpack-dev-server --open --mode development",
+  "build": "webpack --mode production"
+}
+
+
+Create a new file named .babelrc inside the project folder:
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+
+Create a file named webpack.config.js and fill it like the following:
+
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        path: path.join(__dirname, '/dist'),
+        filename:'index_bundle.js'
+    },
+    module : {
+        rules:[
+            {
+                test: /\.js$/,
+                exclude:/node_modules/,
+                use:{
+                    loader:'babel-loader'
+                }
+            }
+        ]
+    },
+    plugins:[
+        new HtmlWebpackPlugin({
+            template:'./src/index.html'
+        })
+    ]
+}
