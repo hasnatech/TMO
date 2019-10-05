@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-class Enabler extends Component {
+class CBS extends Component {
     render() {
         return (
             <div>
@@ -23,8 +23,8 @@ class Enabler extends Component {
                   </div>
                   <div className="flex_25">   
                           <h2 >Resources</h2>
-                         <p> <a href="https://www.cargill.com/">Cargil</a>                 
-                          <a href="https://www.google.com/">Google</a></p>
+                         <p> <a href="https://www.cargill.com/">Cargil</a> </p>                
+                         <p> <a href="https://www.google.com/">Google</a></p>
                   </div>
           </div>           
           
@@ -62,4 +62,4 @@ class Enabler extends Component {
         );
     }
 }
-export default Enabler;
+export default CBS;

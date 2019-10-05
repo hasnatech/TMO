@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import { Link } from "react-router-dom";
-class Enabler extends Component {
-    render() {
-        return (
+class SupplyChain extends Component{
+    render(){
+        return(
             <div>
-                   
-                   <div className="enabler_banner">  </div>
+                
+                <div className="enabler_banner">  </div>
               
           
               <h2 id="des">Transformational Leadership</h2>
@@ -56,10 +56,8 @@ class Enabler extends Component {
                           </div>
                           </div>
                       </div>
-                        
-              
             </div>
         );
     }
 }
-export default Enabler;
+export default SupplyChain;
