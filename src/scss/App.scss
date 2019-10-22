@@ -28,7 +28,7 @@ div.article {
 
     .flex {
         display: flex;
-
+        
         .flex_50 {
             flex: 50%;
             padding-right: 5px;
@@ -42,15 +42,18 @@ div.article {
         .flex_col {
             flex-direction: column;
         }
-        .flex_row{
+
+        .flex_row {
             flex-direction: row;
             width: 100%;
         }
-        .flex_25{
-            flex: 25%;
+
+        .flex_25 {
+            flex: calc(25% - 10px);          
             padding: 5px;
         }
-        .flex_10{
+
+        .flex_10 {
             flex: 10%;
             padding: 5px;
         }
@@ -73,7 +76,7 @@ div.article {
         height: 405px;
     }
 
-    .enabler_img {
+    .enabler_img, .transformational_leadership {
         background-image: url('../images/enabler.png');
         background-position: center;
         background-repeat: no-repeat;
@@ -81,7 +84,7 @@ div.article {
         height: 200px;
     }
 
-    .execution_img {
+    .execution_img , .change_ability{
         background-image: url('../images/execution.png');
         background-position: center;
         background-repeat: no-repeat;
@@ -121,39 +124,47 @@ div.article {
 
     #title {
         color: #fff;
-   
+
     }
-   
+
     .enabler {
         background-image: url('../images/enabler.png');
         background-position: center;
         background-repeat: no-repeat;
-      
         background-size: cover;
         height: 200px;
     }
 
     .execution {
-        background-image: url('../images/execution.png');        
-        background-position: center;                
-        background-repeat: no-repeat;        
+        background-image: url('../images/execution.png');
+        background-position: center;
+        background-repeat: no-repeat;
         background-size: cover;
         height: 200px;
     }
-    .item {
-         position: absolute;
-         left: 20px;
-         bottom: 20px;
-         background-color:black;
-         transition: background 0.5s ease;
-         color: #fff;
-         cursor: pointer;
-         padding: 20px;
-      
-    }
-    .panel{
+
+    .panel {
         position: relative;
+        cursor: pointer;
+      
+        .item {
+            position: absolute;
+            width:calc(100% - 39px);
+            bottom: 0px;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: $text_color;
+            transition: background 0.5s ease;
+            padding: 20px;
+        }
+
+        &:hover {
+            .item {
+                background-color: $brand;
+            }
+
+        }
     }
+
     .enabler_banner {
         background-image: url('../images/enabler.png');
         background-position: center;
@@ -161,22 +172,34 @@ div.article {
         background-size: cover;
         height: 300px;
     }
-    #des{
+    #des {
+        position: relative;
         align-items: flex-end;
-        margin-top: -50px;
+        top: -70px;              
         margin-left: 20px;
-        color: white;
+        color: $text_color;
         font-weight: 200;
     }
-    #des2{
+    #des2 {
         color: #03787C;
     }
-    p span 
-    {
+    p span {
         display: block;
     }
-
-   
-
-    
+    #wrap{
+        flex-wrap: wrap;    
+    }
+    #content{
+        position: relative;
+        bottom: 100px;
+        
+    }
+    #contact{
+        position: relative;
+        bottom: 100px;
+        
+    }
+    h1{
+        color: $h2_color;
+    }
 }

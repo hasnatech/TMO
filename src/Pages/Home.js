@@ -1,9 +1,50 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import model  from "./Models";
+import service from "./Service";
+
 class Home extends Component {
+
+
+   
+    constructor()
+    {
+        super();
+
+        
+        //var _spPageContextInfo = undefined;
+         if(_spPageContextInfo != undefined){
+            //console.log(_spPageContextInfo);
+          /*  model.getListViewItems(_spPageContextInfo.webAbsoluteUrl, 'TMO_Capabilities', '')
+            .done(function (data) {
+                var items = data.d.results;
+                model.setResult(items);
+            })
+            .fail(
+                function (error) {
+                    console.log(JSON.stringify(error));
+                });
+        */
+            //model.getListViewItems(_spPageContextInfo.webAbsoluteUrl, 'TMO%20Content', "?$filter=LinkTitle eq 'Home'", )
+            model.getListViewItems(_spPageContextInfo.webAbsoluteUrl, 'TMO%20Content', "?$filter=Title eq 'Home'", )
+            .done(function (data) {
+                var items = data.d.results;
+                console.log("content", items);
+                model.setContent(items);
+                //console.log(items[0])
+            })
+            .fail(
+                function (error) {
+                    console.log(JSON.stringify(error));
+                });
+        }
+        
+    }
     render() {
+        
         return (
             <div>
+                
                 <div className="home_banner">
                 </div>
 
@@ -24,7 +65,7 @@ class Home extends Component {
 
                 <div className="flex">
                     <div className="flex_50">
-                        <Link to="/leadership">
+                        <Link to="/page/Transformational Leadership">
                             <div className="card leader_img" >
                                 <div className="title">
                                     Transformational Leadership
@@ -35,7 +76,7 @@ class Home extends Component {
                     <div className="flex_50">
                         <div className="flex_col">
                             <div className="flex_100">
-                                <Link to="/enabler">
+                                <Link to="/page/Transformational Enabler">
                                     <div className="card enabler_img">
                                         <div className="title">
                                             Transformational Enabler
@@ -44,7 +85,7 @@ class Home extends Component {
                                 </Link>
                             </div>
                             <div className="flex_100">
-                                <Link to="/execution">
+                                <Link to="/page/Transformational Execution">
                                     <div className="card execution_img">
                                         <div className="title">
                                             Transformational Execution
